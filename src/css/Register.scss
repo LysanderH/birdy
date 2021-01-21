@@ -1,0 +1,17 @@
+.register {
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {}
+
+    &__pwd-btn {
+        background-color: transparent;
+        border: none;
+    }
+
+    &__pwd-wrapper {}
+
+    &__text-input {}
+}
