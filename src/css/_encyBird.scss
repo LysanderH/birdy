@@ -1,0 +1,40 @@
+.ency {
+    
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+    }
+
+    &__therm {
+        @include roboto(16px, $text, 500);
+        margin-top: 8px;
+    }
+
+    &__definition {
+        @include roboto(16px, $text, $lh: 1.5);
+        margin: 4px 0;
+        &--alimentation {
+            color: $white;
+            background-color: $blue;
+            margin: 4px;
+            align-self: flex-start;
+            padding: 8px;
+        }
+
+        // &--map {
+        //     position: relative;
+        //     overflow: hidden;
+        //     max-width: 100%;
+        // }
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

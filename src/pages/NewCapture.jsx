@@ -52,43 +52,46 @@ export default function NewCapture(props) {
 
 
     return (
-        <form action="/" method="get" className="form" onSubmit={e=> submitForm(e)}>
-            <label htmlFor="">Nom latin</label>
-            <div className="autocomplete">
-                <input type="text" onChange={(e) => checkIfInArray(e)} ref={ textInput } placeholder="Gavia stellata" name="latin"/>
-                {complete ?
-                    <ul>
-                        {
-                            complete.map((item, id) => <li key={id} onClick={e => changeInputValue(e)}>{item}</li>)
-                        }
-                    </ul> : ''
-                }
-            </div>
-            <label htmlFor="envergure" className="label">Envergure (cm)</label>
-            <input type="number" className="input" id="envergure" name="envergure" min="0" defaultValue="0"/>
-            <label htmlFor="weight" className="label">Poids (g)</label>
-            <input type="number" className="input" id="weight" name="weight" min="0" defaultValue="0" />
-            <label htmlFor="adiposity" className="label">Adiposité (%)</label>
-            <input type="number" className="input" id="adiposity" name="adiposity" min="0" defaultValue="0" />
-            <label htmlFor="sexe" className="label">Sexe</label>
-            <select className="input" id="sexe" name="sexe" defaultValue={'DEFAULT'}>
-                <option className="option" disabled value='DEFAULT'>Choisir un sexe</option>
-                <option className="option">Mâle</option>
-                <option className="option">Femelle</option>
-            </select>
-            <label htmlFor="age" className="label">Âge</label>
-            <select className="input" id="age" name="age" defaultValue={'DEFAULT'}>
-                <option className="option" value="DEFAULT" disabled>Choisir une tranche d’âge</option>
-                <option className="option">Enfant</option>
-                <option className="option">Adulte</option>
-            </select>
-            <label htmlFor="captype" className="label">Type de capture</label>
-            <select className="input" id="captype" name="captype" defaultValue={'DEFAULT'}>
-                <option className="option" value="DEFAULT" disabled>Choisir une méthode de capture</option>
-                <option className="option">Nid</option>
-                <option className="option">Filet</option>
-            </select>
-            <button type="submit" className="btn">Enregistrer</button>
-        </form>
+        <section className="content">
+            <h2 className="sr-only">Une nouvelle capture</h2>
+            <form action="/" method="get" className="form" onSubmit={e=> submitForm(e)}>
+                <label htmlFor="latin" className="label">Nom latin</label>
+                <div className="autocomplete">
+                    <input type="text" onChange={(e) => checkIfInArray(e)} ref={ textInput } placeholder="Gavia stellata" name="latin" className="input" />
+                    {complete ?
+                        <ul className="autocomplete__list">
+                            {
+                                complete.map((item, id) => <li key={id} onClick={e => changeInputValue(e)} className="autocomplete__item" autocomplete="false">{item}</li>)
+                            }
+                        </ul> : ''
+                    }
+                </div>
+                <label htmlFor="envergure" className="label">Envergure (cm)</label>
+                <input type="number" className="input" id="envergure" name="envergure" min="0" defaultValue="0"/>
+                <label htmlFor="weight" className="label">Poids (g)</label>
+                <input type="number" className="input" id="weight" name="weight" min="0" defaultValue="0" />
+                <label htmlFor="adiposity" className="label">Adiposité (%)</label>
+                <input type="number" className="input" id="adiposity" name="adiposity" min="0" defaultValue="0" />
+                <label htmlFor="sexe" className="label">Sexe</label>
+                <select className="input" id="sexe" name="sexe" defaultValue={'DEFAULT'}>
+                    <option className="option" disabled value='DEFAULT'>Choisir un sexe</option>
+                    <option className="option">Mâle</option>
+                    <option className="option">Femelle</option>
+                </select>
+                <label htmlFor="age" className="label">Âge</label>
+                <select className="input" id="age" name="age" defaultValue={'DEFAULT'}>
+                    <option className="option" value="DEFAULT" disabled>Choisir une tranche d’âge</option>
+                    <option className="option">Enfant</option>
+                    <option className="option">Adulte</option>
+                </select>
+                <label htmlFor="captype" className="label">Type de capture</label>
+                <select className="input" id="captype" name="captype" defaultValue={'DEFAULT'}>
+                    <option className="option" value="DEFAULT" disabled>Choisir une méthode de capture</option>
+                    <option className="option">Nid</option>
+                    <option className="option">Filet</option>
+                </select>
+                <button type="submit" className="btn btn--form">Continuer</button>
+                </form>
+        </section>
     )
 }

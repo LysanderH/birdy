@@ -1,0 +1,17 @@
+.encyclopedy {
+    &__item  {
+        padding: 8px;
+        border-bottom: 1px solid $text;
+        & a{
+            text-decoration: none;
+        }
+    }
+    &__latin {
+        @include roboto(16px, $text, 500);
+        margin-bottom: 4px;
+    }
+    &__name {
+        @include roboto(14px, $orange);
+        margin-bottom: 4px;
+    }
+}

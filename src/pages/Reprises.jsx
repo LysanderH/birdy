@@ -34,8 +34,8 @@ export default function Reprises() {
     }
 
     return (
-        <Fragment>
-            <h2>Captures</h2>
+        <section className="content">
+            <h2 className="heading">Vos reprises</h2>
             {captures ?
                 <ul className="captures__list">
                     {
@@ -45,8 +45,8 @@ export default function Reprises() {
                                     <dl className="captures__data-list">
                                         <dt className="captures__ring">{capture.ring}</dt>
                                         <dd className="captures__date">{ getDate(capture.createdAt.seconds) }</dd>
-                                        <dd className="captures__place">{capture.place}</dd>
                                         <dd className="captures__latin">{capture.latin}</dd>
+                                        <dd className="captures__place">{capture.place}</dd>
                                     </dl>
                                 </Link>
                             </li>
@@ -54,6 +54,6 @@ export default function Reprises() {
                     }
                 </ul> : 'Vous n’avez pas encore capturer d’oiseaux'
             }
-        </Fragment>
+        </section>
     )
 }

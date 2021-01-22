@@ -1,0 +1,19 @@
+.captures {
+    &__data-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 8px;
+        @include roboto(14px, $text);
+    }
+    &__item a{
+        text-decoration: none;
+    }
+
+    &__ring {
+        font-weight: 500;
+    }
+
+    &__latin {
+        color: $orange;
+    }
+}

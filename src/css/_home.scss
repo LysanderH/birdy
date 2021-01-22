@@ -1,0 +1,18 @@
+.home__legend {
+    @include roboto(16px, #333);
+}
+.home{
+
+    &__wrapper {
+        display: flex;
+        width: 100%;
+        border: 1px solid #20639b;
+        padding: 2px;
+        margin: 10px 0;
+    }
+
+    &__input {
+        width: 20%;
+        border: none;
+    }
+}

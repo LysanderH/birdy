@@ -27,6 +27,7 @@ import Capture from './pages/Capture';
 import NewReprise from './pages/NewReprise';
 import Reprise from './pages/Reprise';
 import Places from './pages/Places';
+import Navigation from './components/Navigation';
 
 function App() {
   const [path, setPath] = useState('')
@@ -35,9 +36,7 @@ function App() {
     setPath(window.location.pathname);
   }, []);
 
-  const toggleMenu = () => {
 
-  }
 
   // console.log(window.location.pathname.type + ' ' + (path !== '/login' && path !== '/register'));
 
@@ -47,39 +46,7 @@ function App() {
       <Router>
         <header className="header">
           <h1 className="main-heading"><a href="/" className="main-heading__link" title="Page d'accueil de Birdy">Birdy</a></h1>
-          <button className="manu-toggle" id="menu-toggle" onClick={toggleMenu}>Ouvrir le menu</button>
-          <nav className="nav" aria-label="Principale">
-            <h2 className="nav sr-only">Navigation principale</h2>
-            <ul className="nav__list">
-
-              {(path !== '/login' && path !== '/register')
-                ? <Fragment>
-                  <li className="nav__item">
-                    <Link className="nav__link" to="/">Accueil</Link>
-                  </li>
-                  <li className="nav__item">
-                    <Link className="nav__link" to="/captures">Captures</Link>
-                  </li>
-                  <li className="nav__item">
-                    <Link className="nav__link" to="/reprises">Reprises</Link>
-                  </li>
-                  <li className="nav__item">
-                    <Link className="nav__link" to="/encyclopedy">Encyclopédie</Link>
-                  </li>
-                  <li className="nav__item">
-                    <Link className="nav__link" to="/users">Liste d'utilisateurs</Link>
-                  </li>
-                  <li className="nav__item">
-                    <Link className="nav__link" to="/places">Sites de baguage</Link>
-                  </li>
-                  <li className="nav__item">
-                    <button onClick={() => firebase.auth().signOut()}>Sign out</button>
-                  </li>
-                </Fragment> : ''
-              }
-
-            </ul>
-          </nav>
+          <Navigation />
         </header>
         <PrivateRoute exact path="/users" component={Users} />
         <PrivateRoute exact path="/users/:user" component={User} />

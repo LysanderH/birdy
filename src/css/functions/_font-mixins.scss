@@ -1,0 +1,49 @@
+// Font
+@mixin pacifico($size: false, $colour: $text-color, $weight: false,  $lh: false) {
+  font-family: 'Pacifico', script;
+  @if $size {
+    font-size: $size;
+    font-size: calculateRem($size);
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+}
+
+@mixin roboto($size: false, $colour: false, $weight: false,  $lh: false) {
+  font-family: 'Roboto', sans-serif;
+  @if $size {
+    font-size: $size;
+    font-size: calculateRem($size);
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+}
+
+// font inclusion
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($assets-url + 'fonts/' + $file-name + '.eot');
+    src: url($assets-url + 'fonts/' + $file-name + '.eot?#iefix') format('embedded-opentype'),
+    url($assets-url + 'fonts/' + $file-name + '.woff2') format('woff2'),
+    url($assets-url + 'fonts/' + $file-name + '.woff') format('woff'),
+    url($assets-url + 'fonts/' + $file-name + '.ttf') format('truetype'),
+    url($assets-url + 'fonts/' + $file-name + '.svg##{$font-name}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}

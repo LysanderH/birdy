@@ -1,0 +1,12 @@
+.capture {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+    // &__heading {
+    //     @include roboto(16px, $text, 700);
+    //     margin: 16px 14px 4px 8px;
+
+    // }
+}

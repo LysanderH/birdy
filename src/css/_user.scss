@@ -1,0 +1,42 @@
+.user {
+
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+        text-align: center;
+        margin: 0 0 8px 0;
+        font-size: 3rem
+    }
+
+    &__id {
+        @include roboto(14px, $orange);
+        text-align: center;
+    }
+
+    & a {
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        @include roboto(14px, $text);
+        margin-top: 8px;
+    }
+
+    &__message {
+        @include roboto(14px, $text, 500);
+        margin: 16px 8px;
+
+        strong {
+            color: $orange;
+        }
+    }
+
+    &__item {
+        padding: 8px 16px;
+        @include roboto(16px, $text)
+    }
+
+    &__wrapper {
+margin-bottom: 16px;
+    }
+}

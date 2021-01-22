@@ -1,13 +1,59 @@
-@import-normalize;
+$root-font-size: 16px;
+$dblue: #173f5f;
+$blue: #20639b;
+$greeen: #3caea3;
+$yellow: #f6d55c;
+$orange: #ed553b;
+$text: #333;
+$white: #fff;
 
-.map-wrapper {
-    // position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 50%;
+// Functions & mixins
+@import "./css/functions/calculation-helpers-rem-pc";
+@import "./css/functions/screen-reader";
+@import "./css/functions/clearfix";
+@import "./css/functions/font-mixins";
+@import "./css/functions/width";
+@import "./css/functions/margin-auto";
+@import "./css/functions/pseudo";
+@import "./css/functions/media-queries";
+@import "./css/functions/btn-reset";
 
+@import './css/generic/reset';
+@import "./css/generic/box-sizing";
+
+// Elements or base
+@import "./css/elements/base";
+@import "./css/elements/fonts";
+
+
+@import './css/navigation';
+@import './css/header';
+@import './css/home';
+@import './css/captures';
+@import './css/capture';
+@import './css/encyclopedy';
+@import './css/encyBird';
+@import './css/users';
+@import './css/user';
+@import './css/login';
+
+// .map-wrapper {
+//     // position: relative;
+//     overflow: hidden;
+//     width: 100%;
+//     height: 50%;
+
+// }
+
+// .cachingpalce__form {
+//     margin-top: 500px;
+// }
+
+html,
+body {
+    min-height: 100%;
+    
 }
-
-.cachingpalce__form {
-    margin-top: 500px;
+#root {
+    min-height: 80vh;
 }

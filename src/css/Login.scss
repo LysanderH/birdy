@@ -1,3 +1,22 @@
-form {
-    display: flex;
+.register {
+    &__pwd-wrapper {
+        display: flex;
+        border: 1px solid $text;
+
+        svg {
+            height: 20px;
+        }
+
+        input {
+            border: none;
+            flex: 1;
+        }
+    }
+
+    a {
+        display: inline-block;
+        text-align: center;
+        @include roboto(14px, $text);
+        margin-top: 8px;
+    }
 }

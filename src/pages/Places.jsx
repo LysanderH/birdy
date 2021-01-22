@@ -14,11 +14,11 @@ export default function Places() {
         )
     }, [])
 
-    console.log(position)
+    // console.log(position)
 
     return (
-        <Fragment>
+        <section className="content content--map">
             <GMap positions={position} initialPos={{ lat: 51.260197, lng: 4.402771 }} zoom={8} />
-        </Fragment>
+        </section>
     )
 }

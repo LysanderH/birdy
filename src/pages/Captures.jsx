@@ -34,10 +34,10 @@ const { currentUser } = useContext(AuthContext);
     }
 
     return (
-        <Fragment>
-            <h2>Captures</h2>
+        <section className="content">
+            <h2 className="heading">Vos captures</h2>
             {captures ?
-                <ul className="captures__list">
+                <ul className="captures__list list">
                     {
                         captures.map((capture, id) =>
                             <li className="captures__item item" key={id}>
@@ -45,8 +45,8 @@ const { currentUser } = useContext(AuthContext);
                                     <dl className="captures__data-list">
                                         <dt className="captures__ring">{capture.ring}</dt>
                                         <dd className="captures__date">{ getDate(capture.capturedAt.seconds) }</dd>
-                                        <dd className="captures__place">{capture.place}</dd>
                                         <dd className="captures__latin">{capture.latin}</dd>
+                                        <dd className="captures__place">{capture.place}</dd>
                                     </dl>
                                 </Link>
                             </li>
@@ -54,6 +54,6 @@ const { currentUser } = useContext(AuthContext);
                     }
                 </ul> : 'Vous n’avez pas encore capturer d’oiseaux'
             }
-        </Fragment>
+        </section>
     )
 }

@@ -46,7 +46,8 @@ export default function Home() {
     }
 
     return (
-        <Fragment>
+        <section className="content">
+            <h2 className="sr-only">Accueil</h2>
             <form action="/" method="get" className="form" onSubmit={e => checkRingNumber(e)}>
                 <legend className="home__legend">Numéro de bague</legend>
                 <div className="home__wrapper">
@@ -58,8 +59,8 @@ export default function Home() {
                 </div>
                 {error ? <p className="home__error error">{error}</p>: ''}
                 
-                <button className="btn">Envoyer</button>
+                <button className="btn btn--form">Envoyer</button>
             </form>
-        </Fragment>
+        </section>
     )
 }

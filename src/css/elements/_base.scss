@@ -1,0 +1,96 @@
+.sr-only {
+  @include sr-only;
+}
+
+.btn {
+  @include btn-reset;
+
+  &--form {
+    background-color: $orange;
+    align-self: flex-end;
+    padding: 8px;
+    margin-top: 16px;
+    @include roboto(16px, $white)
+  }
+
+  &--delete {
+      background-color: red;
+      align-self: flex-end;
+      padding: 8px;
+      @include roboto(16px, $white);
+      margin: 0 8px 0 auto;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.input {
+  padding: 8px;
+  @include roboto(16px, $text);
+  width: 100%;
+}
+
+.label {
+  @include roboto(14px, $text, 500);
+  margin: 8px 0 3px 3px;
+}
+
+.autocomplete {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+  &__list {
+    position: absolute;
+    background-color: $white;
+    width: 100%;
+    left: 0;
+    top: 37px;
+    z-index: 1;
+  }
+
+  &__item {
+    padding: 8px;
+    border: 1px solid $text;
+  }
+}
+
+.content {
+  margin-top: 50px;
+
+  &--map {
+    min-height: 100%;
+  }
+}
+
+.heading {
+  @include roboto(18px, $text, 700);
+  margin: 0 0 16px 16px;
+}
+
+.item {
+  @include roboto(16px, $text);
+  border-bottom: 1px solid $text;
+  padding: 8px;
+}
+
+.back {
+  @include btn-reset;
+  @include roboto(14px, $orange);
+  display: flex;
+  align-items: center;
+
+  svg {
+    fill: $orange;
+    height: 15px;
+    width: auto;
+  }
+}
+
+.error {
+  @include roboto(14px, red)
+}

@@ -20,6 +20,14 @@ export class MapContainer extends Component{
         })
     };
 
+    containerStyle = {
+        position: 'relative',
+        width: '100%',
+        height: "100%",
+        minHeight: '500px',
+        zIndex: 10,
+    }
+
 
     render(){
         return (
@@ -28,7 +36,7 @@ export class MapContainer extends Component{
                 zoom={this.props.zoom}
                 initialCenter={this.props.initialPos}
                 onClick={this.props.getCoordinates}
-                style={{width: '100%', height: '30%'}}
+                containerStyle={this.containerStyle}
                 >
 
                 {this.props.positions ? this.props.positions.map((position, key) =>

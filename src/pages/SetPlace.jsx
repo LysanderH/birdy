@@ -45,18 +45,18 @@ export default function SetPlace(props) {
 
     return (
         <form action="/" method="get" className="form" onSubmit={e=> submitForm(e)}>
-            <label htmlFor="">Lieux de capture</label>
+            <label htmlFor="city" className="label">Lieux de capture</label>
             <div className="autocomplete">
-                <input type="text" onChange={(e) => checkIfInArray(e)} ref={ textInput } placeholder="Liège" name="city"/>
+                <input type="text" onChange={(e) => checkIfInArray(e)} ref={ textInput } placeholder="Liège" id="city" name="city" className="input" />
                 {complete ?
-                    <ul>
+                    <ul className="autocomplete__list">
                         {
-                            complete.map((item, id) => <li key={id} onClick={e => changeInputValue(e)}>{item}</li>)
+                            complete.map((item, id) => <li key={id} onClick={e => changeInputValue(e)} className="autocomplete__item">{item}</li>)
                         }
                     </ul> : ''
                 }
             </div>
-            <button type="submit" className="btn">Enregistrer</button>
+            <button type="submit" className="btn btn--form">Enregistrer</button>
         </form>
     )
 }

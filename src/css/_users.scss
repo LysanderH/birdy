@@ -1,0 +1,25 @@
+.users {
+    &__list {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        border-bottom: 1px solid $dblue;
+        padding: 16px;
+
+        & a {
+            text-decoration: none;
+        }
+    }
+
+    &__email {
+        @include roboto(14px, $orange);
+    }
+
+    &__name {
+        @include roboto(16px, $text, 500);
+        margin-bottom: 6px;
+    }
+}
